@@ -14,7 +14,7 @@ def get_payments(zrzutka_id, zrzutka_api_key):
         "Authorization": "Bearer " + zrzutka_api_key,
     }
     url = zrzutka_api_url.format(zrzutka_id)
-    req = requests.get(url, headers=headers)
+    req = requests.get(url, headers=headers, timeout=10)
     data = req.json()
 
     return data
@@ -26,7 +26,9 @@ def send_webhook(webhook_url, username, messages):
             "username": username,
             "content": output_message,
         }
-        req = requests.post(webhook_url, params={"wait": True}, json=message_data)
+        req = requests.post(
+            webhook_url, params={"wait": True}, json=message_data, timeout=10
+        )
         req.raise_for_status()
 
     output_message = ""
