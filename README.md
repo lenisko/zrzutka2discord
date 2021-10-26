@@ -1,6 +1,6 @@
 # zrzutka2discord
 
-Simple script to send notifications to Discord Webhook about new payments on zrzutka.pl
+Simple script to send notifications to Discord using Webhook about new payments on zrzutka.pl
 
 ### Usage
 
