@@ -33,7 +33,7 @@ def send_webhook(webhook_url, username, messages):
 
     output_message = ""
 
-    for message in messages:
+    for message in messages[::-1]:
         if len(output_message) + len(message) < 2000:
             output_message += message
         else:
