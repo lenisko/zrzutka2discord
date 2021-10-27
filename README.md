@@ -6,6 +6,6 @@ Simple script to send notifications to Discord using Webhook about new payments 
 
 - Clone repository `git clone https://github.com/lenisko/zrzutka2discord`
 - Create python3 venv `virtualenv -p python3 env`
-- Install requirements `pip install -r requirements.txt`
+- Install requirements `./env/bin/pip install -r requirements.txt`
 - Copy .env file and edit `cp .env.example .env && vi .env`
-- Run `python3 app.py`
+- Run `./env/bin/python app.py`
