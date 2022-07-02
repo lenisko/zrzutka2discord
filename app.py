@@ -14,7 +14,7 @@ def get_payments(zrzutka_id, zrzutka_api_key):
         "Authorization": "Bearer " + zrzutka_api_key,
     }
     url = zrzutka_api_url.format(zrzutka_id)
-    req = requests.get(url, headers=headers, timeout=10)
+    req = requests.get(url, params={"t": int(time.time())}, headers=headers, timeout=10)
     data = req.json()
 
     return data
